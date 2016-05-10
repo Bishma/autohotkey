@@ -1,38 +1,40 @@
+; Single Surface 4 top button click
 #F20::
-IfWinExist ahk_class screenClass
-{
-Send {Space} 
-return
-}
+; if Onenote isn't open
 IfWinNotExist ahk_exe OneNote.exe
 {
-Run C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE
-return
+    ; open it
+    Run C:\Program Files\Microsoft Office\root\Office16\ONENOTE.EXE
+    return
 }
+; If Onenote is the active program
 IfWinActive ahk_exe OneNote.exe
 {
-Send, {Alt down}{5}{Alt up}
-return
+    ; trigger quick action 5 - in my case this open the pen choice dialog
+    Send, {Alt down}{5}{Alt up}
+    return
 }
+; if Onenote is open but not active
 IfWinExist ahk_exe OneNote.exe
 {
-WinActivate
-return
+    ; make it the active program
+    WinActivate
+    return
 }
 
+; Double top button click
 #F19::
+; if Onenote is the active program
 IfWinActive ahk_exe OneNote.exe
 {
-Send, {Alt down}{4}{Alt up}{x}
-return
+    ; trigger quick action 4 then press x - in my case this triggers Ink to Text
+    Send, {Alt down}{4}{Alt up}{x}
+    return
 }	
-IfWinExist ahk_class screenClass
-{
-Send {Left} 
-return
-}
+; if Onenote is not the active program
 else
 {
+    ; trigger Onenote clipper
     send, {Shift down}{LWin down}{s}
     Sleep, 500
     send, {Shift up}{LWin up}
@@ -40,9 +42,11 @@ else
     return
 }
 
+; long top button press
 #F18::
+; toggle windows 10 tablet mode by opening the tablemode settings panel, sending a space to toggle the swtich, then closing the settings panel
 run ms-settings:tabletmode
 sleep, 1000
 send {space}
 send {alt down}{F4}{alt up}
-
+return
