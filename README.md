@@ -4,6 +4,8 @@
 
 Makes use of the fact that the surface pen's top button sends F18, F19, and F20 keystrokes as long press, double click, and single click respectively.
 
+**Please Note** To use this AHK script you'll want to get the "Surface" app from the windows app store and disable all the top button default actions.
+
 ### Single Click
 * Launch Onenote if not running
 * Bring Onenote to foreground if running but not the active window
