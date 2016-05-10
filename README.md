@@ -25,7 +25,7 @@ Makes use of the fact that the surface pen's top button sends F18, F19, and F20 
 #### Double Click
 * If Onenote is not the active program then clip to onenote
 * If onenote is the active tab then run Quicklaunch Item 4 and press x
-    * In my case the initiates Ink to Test
+    * In my case the initiates "Ink to Text" for turning my handwritten notes into searchable text
 
 #### Long Press
 * toggle tablet mode in windows 10
