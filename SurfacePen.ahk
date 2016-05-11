@@ -28,7 +28,9 @@ IfWinExist ahk_exe OneNote.exe
 IfWinActive ahk_exe OneNote.exe
 {
     ; trigger quick action 4 then press x - in my case this triggers Ink to Text
-    Send, {Alt down}{4}{Alt up}{x}
+    Send, {Alt down}
+    Sleep, 200
+    Send, {Alt up}{4}{x}
     return
 }	
 ; if Onenote is not the active program
